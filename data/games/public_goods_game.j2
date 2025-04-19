@@ -1,0 +1,15 @@
+### Problem Definition
+
+In the Public Goods Game, 10 players each receive 100 token and simultaneously choose contributions `gᵢ` (0 ≤ gᵢ ≤ 100) to a public pot; the total ∑gᵢ is multiplied by 2 and split equally, so each payoff is 100−gᵢ+(2/10)·∑gⱼ.
+
+## Instructions to Players
+
+### Initial Prompt
+
+> Role: You are Player `i` in a group of 10, each with 100 token.
+> **Task:** Decide how many tokens **gᵢ** (0 ≤ gᵢ ≤ 100) to contribute to the public pot, knowing contributions are multiplied by 2 and shared equally. Justify your choice.
+
+### Repeated‑Round Prompt
+
+> Role: Round `t` begins. Last round, you contributed gᵢ,ₜ₋₁, and the group average was avgₜ₋₁.
+> **Task:** Choose your new contribution **gᵢ,ₜ** (0 <= gᵢ,ₜ <= 100). Reflect on how past contributions and group behavior influence you.
