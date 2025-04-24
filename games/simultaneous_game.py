@@ -1,38 +1,28 @@
-from agents.base_agent import GameAgent
-from typing import Dict, List
+from games import BaseGame
 
 
-class SimultaneousGameManager:
-    def __init__(self, agent_a: GameAgent, agent_b: GameAgent):
-        self.agent_a = agent_a
-        self.agent_b = agent_b
-        self.history: List[Dict] = []
-
-    def run_one_round(self, initial_state: dict):
-        input_data = {
-            "content": "do your move"
+class SimultaneousGame(BaseGame):
+    def play_round(self) -> dict:
+        self.current_round += 1
+        # Prepare prompts for this round for both agents
+        agent_names = list(self.agents.keys())
+        agent1, agent2 = self.agents[agent_names[0]], self.agents[agent_names[1]]
+        self.set_player_instructions(agent1, agent2)
+        # Get actions from both agents (simultaneous decisions)
+        input_prompt = {"content": "Your turn to move."}  # a generic placeholder message
+        output1 = agent1.run(input_prompt)
+        output2 = agent2.run(input_prompt)
+        # Assume outputX.action gives the chosen action as per AgentOutput schema
+        action1 = output1["action"]
+        action2 = output2['action']
+        # Record the results of this round
+        round_result = {
+            "round": self.current_round,
+            "agents": [
+                {"name": agent1.name, "action": action1},
+                {"name": agent2.name, "action": action2}
+            ]
         }
-
-        # 🔁 Simultaneous moves
-        output_a = self.agent_a.run(input_data)
-        output_b = self.agent_b.run(input_data)
-
-        result = {
-            "round": 1,
-            "agent_a": {
-                "name": self.agent_a.config.name,
-                "action": output_a.action
-            },
-            "agent_b": {
-                "name": self.agent_b.config.name,
-                "action": output_b.action
-            }
-        }
-
-        self.history.append(result)
-
-        print(f"Round 1")
-        print(f"  {self.agent_a.config.name} → {output_a.action}")
-        print(f"  {self.agent_b.config.name} → {output_b.action}")
-
-        return result
+        self.history.append(round_result)
+        print(f"Round {self.current_round}: {agent1.name} → {action1}, {agent2.name} → {action2}")
+        return round_result

@@ -6,8 +6,7 @@ import httpx
 
 
 class AgentInput(BaseModel):
-    game_state: dict = Field(..., description="Current state of the game")
-    history: list = Field(..., description="History of moves")
+    query: str = Field(..., description="Query for the move")
 
 class AgentOutput(BaseModel):
     action: str = Field(..., description="Chosen action by the agent")
@@ -17,41 +16,59 @@ http_client = httpx.Client(base_url="http://localhost:11434")
 
 # Create function compatible with Instructor
 def ollama_create(messages, **kwargs):
-    prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
-    response = http_client.post(
+    """
+    Translate Instructor/ChatML messages → Ollama /api/generate payload
+    """
+    prompt = "\n".join(f"{m['role']}: {m['content']}" for m in messages)
+    model_name = kwargs.get("model", "llama3")        # default model
+    params = {
+        "model": model_name,
+        "prompt": prompt,
+        "stream": False
+    }
+    # kwargs such as temperature, top_p, etc. get forwarded if supplied
+    for key in ("temperature", "top_p", "top_k", "repeat_penalty"):
+        if key in kwargs:
+            params[key] = kwargs[key]
+
+    resp = http_client.post(
         "/api/generate",
         json={
-            "model": kwargs.get("model", "mistral"),
+            "model": model_name,
             "prompt": prompt,
-            "stream": False
+            "stream": False,
+            "format": "json"  # ✅ accepted in current releases
         }
-    )
-    return {
-        "choices": [
-            {"message": {"content": response.json()["response"]}}
-        ]
-    }
+    )                         # raise if bad HTTP
 
+    content = resp.json()["response"].strip()
+    return eval(content)
+
+# ---------- 3) GameAgent class -----------------------------------
 class GameAgent(BaseAgent):
-    def __init__(self, name: str, background_prompt: str, model_name: str = "mistral"):
+    """
+    Wraps an Instructor model hooked to Ollama and exposes .run().
+    """
+    def __init__(self, name: str, background_prompt: str, model_name: str = "llama3.2"):
+        self.name = name
         instructor_model = Instructor(
-            client=http_client,
-            create=ollama_create,
+            client=http_client,          # uses the shared httpx.Client
+            create=ollama_create,        # our helper above
             model=model_name
         )
 
         system_prompt_generator = SystemPromptGenerator(
-            background=[background_prompt],
-            steps=[],
-            output_instructions=[]
+            background=[background_prompt],  # persona text
+            steps=[],                        # filled each turn by game logic
+            output_instructions=[]           # optional: schema hints
         )
 
-        config = BaseAgentConfig(
+        cfg = BaseAgentConfig(
             name=name,
             system_prompt_generator=system_prompt_generator,
             input_schema=AgentInput,
             output_schema=AgentOutput,
-            client=instructor_model,  # ✅ pass as `client`
-            model=model_name           # ✅ pass model name string here
+            client=instructor_model,         # <-- Instructor instance
+            model=model_name                 # model id (string) for logging
         )
-        super().__init__(config)
+        super().__init__(cfg)
