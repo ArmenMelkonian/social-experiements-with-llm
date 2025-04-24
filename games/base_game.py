@@ -1,3 +1,4 @@
+import json
 from abc import ABC, abstractmethod
 from typing import Dict, List
 from itertools import product
@@ -62,3 +63,21 @@ class BaseGame(ABC):
 
     def play_game(self):
         raise NotImplementedError
+
+    @property
+    def results(self):
+        if not self.history:
+            logger.warning(f"The game {self.game_name} is not simulated.")
+        return {
+            "game": self.game_name,
+            "agents": [name for name in self.agents],
+            "rounds": self.history
+        }
+
+    def save_results(self, save_path: str = None):
+        if save_path is None:
+            save_path = CFG.results_dir / f"{self.game_name}_simulation.json"
+        results = self.results
+        with open(save_path, "w") as f:
+            json.dump(results, f, indent=4)
+        logger.success(f"Simulation results of {self.game_name.replace('_', ' ')} are saved successfully.")
