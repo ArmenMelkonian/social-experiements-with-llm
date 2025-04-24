@@ -11,10 +11,9 @@ class AgentInput(BaseModel):
 class AgentOutput(BaseModel):
     action: str = Field(..., description="Chosen action by the agent")
 
-# Shared HTTP client
 http_client = httpx.Client(base_url="http://localhost:11434")
 
-# Create function compatible with Instructor
+
 def ollama_create(messages, **kwargs):
     """
     Translate Instructor/ChatML messages → Ollama /api/generate payload
@@ -24,9 +23,10 @@ def ollama_create(messages, **kwargs):
     params = {
         "model": model_name,
         "prompt": prompt,
-        "stream": False
+        "stream": False,
+        "temperature": 0.1  # a little randomness
     }
-    # kwargs such as temperature, top_p, etc. get forwarded if supplied
+
     for key in ("temperature", "top_p", "top_k", "repeat_penalty"):
         if key in kwargs:
             params[key] = kwargs[key]
@@ -37,14 +37,14 @@ def ollama_create(messages, **kwargs):
             "model": model_name,
             "prompt": prompt,
             "stream": False,
-            "format": "json"  # ✅ accepted in current releases
+            "format": "json"
         }
-    )                         # raise if bad HTTP
+    )
 
     content = resp.json()["response"].strip()
     return eval(content)
 
-# ---------- 3) GameAgent class -----------------------------------
+
 class GameAgent(BaseAgent):
     """
     Wraps an Instructor model hooked to Ollama and exposes .run().
@@ -52,15 +52,15 @@ class GameAgent(BaseAgent):
     def __init__(self, name: str, background_prompt: str, model_name: str = "llama3.2"):
         self.name = name
         instructor_model = Instructor(
-            client=http_client,          # uses the shared httpx.Client
-            create=ollama_create,        # our helper above
+            client=http_client,
+            create=ollama_create,
             model=model_name
         )
 
         system_prompt_generator = SystemPromptGenerator(
             background=[background_prompt],  # persona text
             steps=[],                        # filled each turn by game logic
-            output_instructions=[]           # optional: schema hints
+            output_instructions=[]
         )
 
         cfg = BaseAgentConfig(
@@ -68,7 +68,7 @@ class GameAgent(BaseAgent):
             system_prompt_generator=system_prompt_generator,
             input_schema=AgentInput,
             output_schema=AgentOutput,
-            client=instructor_model,         # <-- Instructor instance
-            model=model_name                 # model id (string) for logging
+            client=instructor_model,
+            model=model_name
         )
         super().__init__(cfg)
