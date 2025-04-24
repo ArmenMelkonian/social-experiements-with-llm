@@ -1,6 +1,8 @@
 from games.base_game import BaseGame
 
 class SequentialGame(BaseGame):
+
+    # TODO: add new method play_round_batch and rename later
     def play_round(self) -> dict:
         self.current_round += 1
         agent_names = list(self.agents.keys())
