@@ -1,6 +1,6 @@
 from typing import Dict, List
 
-from games import BaseGame, SimultaneousGame
+from games import BaseGame
 from agents import GameAgent
 
 

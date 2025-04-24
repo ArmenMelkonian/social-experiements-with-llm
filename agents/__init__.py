@@ -1,1 +1,1 @@
-from .base_agent import BaseAgent, GameAgent
+from .base_agent import GameAgent
