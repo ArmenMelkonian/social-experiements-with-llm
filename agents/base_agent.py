@@ -43,7 +43,7 @@ def ollama_create(messages, **kwargs):
         }
     )
 
-    content = resp.json()["response"].strip()
+    content = resp.json()["response"].strip().replace("null", "")
     try:
         return eval(content)
     except Exception as e:
