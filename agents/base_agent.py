@@ -1,3 +1,5 @@
+from loguru import logger
+
 from atomic_agents.agents.base_agent import BaseAgent, BaseAgentConfig
 from atomic_agents.lib.components.system_prompt_generator import SystemPromptGenerator
 from instructor import Instructor
@@ -42,8 +44,11 @@ def ollama_create(messages, **kwargs):
     )
 
     content = resp.json()["response"].strip()
-    return eval(content)
-
+    try:
+        return eval(content)
+    except Exception as e:
+        logger.error(f"Couldn't parse LLM response, got {e = }, {content = }")
+        return {}
 
 class GameAgent(BaseAgent):
     """
