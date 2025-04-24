@@ -5,16 +5,16 @@ from agents import GameAgent
 
 
 class MultiRoundGame(BaseGame):
-    def __init__(self, agents: Dict[str, GameAgent], game_name: str, rounds: int):
-        super().__init__(agents, game_name)
-        self.total_rounds = rounds
+
+    def __init__(self, agents: Dict[str, GameAgent], game_name: str, rounds: int, player_output: str, players_n: int = 2):
+        super().__init__(agents, game_name, player_output, players_n)
+        self.rounds = rounds
         self.current_round = 0
 
-    def play_game(self, rounds: int = None) -> List[dict]:
+    def play_game(self) -> List[dict]:
         """Play the game for the specified number of rounds, collecting results."""
-        num_rounds = rounds or self.total_rounds
         results = []
-        for _ in range(num_rounds):
+        for _ in range(self.rounds):
             result = self.play_round()
             results.append(result)
         # After all rounds, possibly process final outcomes

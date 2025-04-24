@@ -1,5 +1,8 @@
 from abc import ABC, abstractmethod
-from typing import Dict
+from typing import Dict, List
+from itertools import product
+
+from loguru import logger
 
 from agents.base_agent import GameAgent
 from src.config import CFG
@@ -7,35 +10,39 @@ from src.utils import read_prompt_template
 
 
 class BaseGame(ABC):
-    def __init__(self, agents: Dict[str, GameAgent], game_name: str):
+    def __init__(self, agents: Dict[str, GameAgent], game_name: str, player_output: str, players_n: int = 2):
         self.agents = agents
         self.game_name = game_name
+        self.player_output = player_output
+        self.players_n = players_n
         self.history = []
         self.state = {}
         self._load_game_templates()
+        self.pairs = None
         self.current_round = 0
 
     def _load_game_templates(self):
-        # Compose path to the game’s template directory
         templates_dir = CFG.games_templates_dir / self.game_name
-        # Load and render game description template (no dynamic data needed here)
         description = read_prompt_template(templates_dir, "game_description").render()
-        # Append game description to each agent's system (background) prompts
         for agent in self.agents.values():
             agent.system_prompt_generator.background.append(description)
-        # Load player instruction template for use each round
         self._player_instruction_tmpl = read_prompt_template(templates_dir, "player")
 
-    def set_player_instructions(self, agent1: GameAgent, agent2: GameAgent):
-        instruction_text = self._player_instruction_tmpl.render(round=self.current_round,
-                                                                total_rounds=self.total_rounds,
-                                                                history=self._format_history())
-        # Set the same instruction for both agents (since symmetric roles)
-        agent1.system_prompt_generator.steps = [instruction_text]
-        agent2.system_prompt_generator.steps = [instruction_text]
+    # def set_player_instructions(self, agent1: GameAgent, agent2: GameAgent):
+    #     instruction_text = self._player_instruction_tmpl.render(round=self.current_round,
+    #                                                             total_rounds=self.total_rounds,
+    #                                                             history=self._format_history())
+    #     agent1.system_prompt_generator.steps = [instruction_text]
+    #     agent2.system_prompt_generator.steps = [instruction_text]
+
+    def simulate(self, rounds=1):
+        logger.info(f"Starting the simulation, game: {self.game_name.replace('_', ' ')}")
+        self.generate_agent_pairs()
+        logger.info(f"Agent pairs are created with {self.players_n} players")
+        self.play_game()
 
     def generate_agent_pairs(self):
-        return [([name1, agent1], [name2, agent2]) for name1, agent1 in self.agents.items() for name2, agent2 in self.agents.items()]
+        self.pairs =  list(product(self.agents, repeat=self.players_n))
 
     def add_game_description(self):
         for _, agent in self.agents.items():
@@ -43,17 +50,15 @@ class BaseGame(ABC):
             game_prompt = read_prompt_template(templates_dir, "game_description").render()
             agent.system_prompt_generator.background.append(game_prompt)
 
-    def set_player_instructions(self, agent_1: GameAgent, agent_2: GameAgent):
+    def set_player_instructions(self, *agents: List[GameAgent]):
         templates_dir = CFG.games_templates_dir / self.game_name
         instruction_prompt = read_prompt_template(templates_dir, "player").render()
-        agent_1.system_prompt_generator.steps = [instruction_prompt]
-        agent_2.system_prompt_generator.steps = [instruction_prompt]
-        return agent_1, agent_2
-
+        for agent in agents:
+            agent.system_prompt_generator.steps = [instruction_prompt]
 
     @abstractmethod
     def play_round(self):
         raise NotImplementedError
 
-    def play_game(self, rounds: int):
+    def play_game(self):
         raise NotImplementedError

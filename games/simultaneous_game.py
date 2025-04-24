@@ -1,28 +1,34 @@
+from collections import defaultdict
+
 from games import BaseGame
 
 
 class SimultaneousGame(BaseGame):
-    def play_round(self) -> dict:
+
+    def play_round(self):
         self.current_round += 1
-        # Prepare prompts for this round for both agents
-        agent_names = list(self.agents.keys())
-        agent1, agent2 = self.agents[agent_names[0]], self.agents[agent_names[1]]
-        self.set_player_instructions(agent1, agent2)
-        # Get actions from both agents (simultaneous decisions)
-        input_prompt = {"content": "Your turn to move."}  # a generic placeholder message
-        output1 = agent1.run(input_prompt)
-        output2 = agent2.run(input_prompt)
-        # Assume outputX.action gives the chosen action as per AgentOutput schema
-        action1 = output1["action"]
-        action2 = output2['action']
-        # Record the results of this round
+        for idx, pair in enumerate(self.pairs, start=1):
+            self.play_round_batch(*pair, idx=idx)
+
+    def play_round_batch(self, *agent_names, idx) -> dict:
+        name_counts = defaultdict(int)
+        agents = {}
+        for name in agent_names:
+            name_counts[name] += 1
+            key = f"{name}{name_counts[name]}" if name_counts[name] > 1 else name
+            agents[key] = self.agents[name]
+
+        self.set_player_instructions(*agents.values())
+
+        input_prompt = {"content": "Your turn to move."}
+
+        outputs = {agent_name: agent.run(input_prompt) for agent_name, agent in agents.items()}
+        actions = {agent_name: output.get(self.player_output) for agent_name, output in outputs.items()}
+
         round_result = {
             "round": self.current_round,
-            "agents": [
-                {"name": agent1.name, "action": action1},
-                {"name": agent2.name, "action": action2}
-            ]
+            "agents": [{"name": name, self.player_output: action} for name, action in actions.items()]
         }
         self.history.append(round_result)
-        print(f"Round {self.current_round}: {agent1.name} → {action1}, {agent2.name} → {action2}")
+        print(f"Round {self.current_round} (Pair {idx}/{len(self.pairs)}): {', '.join(f'{agent_name} → {action}' for agent_name, action in actions.items())}")
         return round_result
