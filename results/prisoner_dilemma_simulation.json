@@ -13,192 +13,28 @@
         "adaptive_optimist"
     ],
     "rounds": [
-        {
-            "Round 1": [
-                {
+        [
+            {
+                "Round 1": {
                     "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": "C"
-                        },
-                        {
-                            "name": "rational_strategist2",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "altruistic_helper",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": null
-                        },
-                        {
-                            "name": "passive_observer",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        },
                         {
                             "name": "adaptive_optimist",
                             "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
                         },
                         {
-                            "name": "rational_strategist",
+                            "name": "competitive_egoist",
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        },
-                        {
-                            "name": "impulsive_reactor2",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        },
                         {
                             "name": "dominant_leader",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "impulsive_reactor",
-                            "action": null
-                        },
-                        {
-                            "name": "conscientious_planner",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "impulsive_reactor",
-                            "action": null
-                        },
-                        {
-                            "name": "altruistic_helper",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "impulsive_reactor",
                             "action": "D"
                         },
                         {
@@ -206,164 +42,12 @@
                             "action": "D"
                         }
                     ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        },
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        },
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        },
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        },
-                        {
-                            "name": "adaptive_optimist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        },
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        },
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        },
-                        {
-                            "name": "dominant_leader2",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        },
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        },
-                        {
-                            "name": "altruistic_helper",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "dominant_leader",
-                            "action": null
-                        },
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        },
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        },
-                        {
-                            "name": "passive_observer",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        },
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
                             "name": "dominant_leader",
@@ -374,44 +58,28 @@
                             "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
-                            "name": "conscientious_planner",
-                            "action": "D"
-                        },
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "conscientious_planner",
-                            "action": null
-                        },
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "conscientious_planner",
+                            "name": "adaptive_optimist",
                             "action": "C"
                         },
                         {
-                            "name": "dominant_leader",
-                            "action": "D"
+                            "name": "adaptive_optimist2",
+                            "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
                             "name": "conscientious_planner",
@@ -419,227 +87,127 @@
                         },
                         {
                             "name": "conscientious_planner2",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        },
-                        {
-                            "name": "altruistic_helper",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        },
-                        {
-                            "name": "competitive_egoist",
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        },
                         {
                             "name": "skeptical_individualist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        },
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        },
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "conscientious_planner",
                             "action": "D"
                         },
                         {
                             "name": "adaptive_optimist",
-                            "action": "D"
+                            "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
-                            "name": "altruistic_helper",
+                            "name": "passive_observer",
                             "action": "C"
                         },
                         {
-                            "name": "rational_strategist",
-                            "action": "D"
+                            "name": "impulsive_reactor",
+                            "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
-                            "name": "altruistic_helper",
-                            "action": "D"
+                            "name": "adaptive_optimist",
+                            "action": "C"
                         },
                         {
                             "name": "impulsive_reactor",
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
                             "name": "altruistic_helper",
                             "action": "C"
-                        },
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "altruistic_helper",
-                            "action": "D"
-                        },
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "altruistic_helper",
-                            "action": "D"
                         },
                         {
                             "name": "altruistic_helper2",
                             "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
-                        {
-                            "name": "altruistic_helper",
-                            "action": "D"
-                        },
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "altruistic_helper",
-                            "action": "D"
-                        },
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "altruistic_helper",
-                            "action": "D"
-                        },
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "altruistic_helper",
-                            "action": "C"
-                        },
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "altruistic_helper",
-                            "action": "C"
-                        },
-                        {
-                            "name": "adaptive_optimist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        },
                         {
                             "name": "impulsive_reactor",
                             "action": "D"
+                        },
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        },
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        },
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
                             "name": "competitive_egoist",
@@ -650,383 +218,127 @@
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
-                            "name": "competitive_egoist",
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        },
+                        {
+                            "name": "adaptive_optimist",
                             "action": null
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        },
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        },
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        },
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
                         },
                         {
                             "name": "conscientious_planner",
                             "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
                             "name": "competitive_egoist",
                             "action": "D"
-                        },
-                        {
-                            "name": "altruistic_helper",
-                            "action": null
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "competitive_egoist",
-                            "action": null
                         },
                         {
                             "name": "competitive_egoist2",
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
-                        {
-                            "name": "competitive_egoist",
-                            "action": null
-                        },
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "passive_observer",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "competitive_egoist",
-                            "action": null
-                        },
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        },
                         {
                             "name": "adaptive_optimist",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": null
-                        },
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": null
-                        },
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "altruistic_helper",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "C"
-                        },
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "skeptical_individualist2",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "passive_observer",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "adaptive_optimist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        },
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        },
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        },
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        },
-                        {
-                            "name": "conscientious_planner",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        },
-                        {
-                            "name": "altruistic_helper",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "C"
-                        },
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        },
-                        {
-                            "name": "skeptical_individualist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        },
-                        {
-                            "name": "passive_observer2",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "D"
-                        },
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "passive_observer",
-                            "action": "C"
-                        },
-                        {
-                            "name": "adaptive_optimist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        },
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        },
-                        {
-                            "name": "impulsive_reactor",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        },
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        },
-                        {
-                            "name": "conscientious_planner",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "trusting_collaborator",
                             "action": "C"
                         },
                         {
@@ -1034,44 +346,108 @@
                             "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        },
-                        {
-                            "name": "competitive_egoist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        },
                         {
                             "name": "skeptical_individualist",
                             "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "trusting_collaborator",
-                            "action": null
                         },
                         {
                             "name": "passive_observer",
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        },
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        },
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        },
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        },
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
                             "name": "trusting_collaborator",
@@ -1082,35 +458,15 @@
                             "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
-                            "name": "trusting_collaborator",
-                            "action": "C"
-                        },
-                        {
-                            "name": "adaptive_optimist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "adaptive_optimist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "rational_strategist",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "adaptive_optimist",
+                            "name": "conscientious_planner",
                             "action": "D"
                         },
                         {
@@ -1118,59 +474,79 @@
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
-                            "name": "adaptive_optimist",
-                            "action": "D"
-                        },
-                        {
-                            "name": "dominant_leader",
-                            "action": "D"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "adaptive_optimist",
+                            "name": "altruistic_helper",
                             "action": "C"
                         },
                         {
                             "name": "conscientious_planner",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "adaptive_optimist",
-                            "action": "C"
-                        },
-                        {
-                            "name": "altruistic_helper",
-                            "action": "C"
-                        }
-                    ]
-                },
-                {
-                    "agents": [
-                        {
-                            "name": "adaptive_optimist",
-                            "action": "C"
-                        },
-                        {
-                            "name": "competitive_egoist",
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
-                            "name": "adaptive_optimist",
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        },
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        },
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "trusting_collaborator",
+                            "action": null
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "impulsive_reactor",
                             "action": "D"
                         },
                         {
@@ -1178,11 +554,143 @@
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
-                            "name": "adaptive_optimist",
+                            "name": "conscientious_planner",
+                            "action": "C"
+                        },
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        },
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        },
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "impulsive_reactor",
+                            "action": null
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        },
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "competitive_egoist",
                             "action": "D"
                         },
                         {
@@ -1190,11 +698,383 @@
                             "action": "D"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        },
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        },
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        },
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        },
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
                             "name": "adaptive_optimist",
+                            "action": "C"
+                        },
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        },
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        },
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        },
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        },
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "skeptical_individualist2",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        },
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        },
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        },
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        },
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        },
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        },
+                        {
+                            "name": "dominant_leader2",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "conscientious_planner",
+                            "action": "D"
+                        },
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "conscientious_planner",
                             "action": "D"
                         },
                         {
@@ -1202,20 +1082,536 @@
                             "action": "C"
                         }
                     ]
-                },
-                {
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
                     "agents": [
                         {
-                            "name": "adaptive_optimist",
-                            "action": "D"
+                            "name": "trusting_collaborator",
+                            "action": "C"
                         },
                         {
-                            "name": "adaptive_optimist2",
+                            "name": "passive_observer",
                             "action": "D"
                         }
                     ]
                 }
-            ]
-        }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "trusting_collaborator",
+                            "action": null
+                        },
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        },
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        },
+                        {
+                            "name": "impulsive_reactor",
+                            "action": null
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        },
+                        {
+                            "name": "passive_observer2",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        },
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        },
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        },
+                        {
+                            "name": "conscientious_planner",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "trusting_collaborator",
+                            "action": null
+                        },
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "rational_strategist2",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "conscientious_planner",
+                            "action": "C"
+                        },
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        },
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        },
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        },
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        },
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        },
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "passive_observer",
+                            "action": "C"
+                        },
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        },
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        },
+                        {
+                            "name": "impulsive_reactor2",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        },
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "passive_observer",
+                            "action": "D"
+                        },
+                        {
+                            "name": "dominant_leader",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "adaptive_optimist",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "impulsive_reactor",
+                            "action": "D"
+                        },
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "altruistic_helper",
+                            "action": "C"
+                        },
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "skeptical_individualist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "competitive_egoist",
+                            "action": "D"
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "Round 1": {
+                    "agents": [
+                        {
+                            "name": "rational_strategist",
+                            "action": "D"
+                        },
+                        {
+                            "name": "trusting_collaborator",
+                            "action": "C"
+                        }
+                    ]
+                }
+            }
+        ]
     ]
 }
