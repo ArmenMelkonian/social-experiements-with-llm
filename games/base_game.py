@@ -13,15 +13,13 @@ from src.utils import read_prompt_template
 
 
 class BaseGame(ABC):
-    def __init__(self, agents: Dict[str, GameAgent], game_name: str, player_output: str, players_n: int = 2, rounds: int = 1):
+    def __init__(self, agents: Dict[str, GameAgent], game_name: str, *, players_n: int = 2, rounds: int = 1):
         self.agents = agents
         self.game_name = game_name
-        self.player_output = player_output
         self.players_n = players_n
         self.total_rounds = rounds
         self.history = []
         self.state = {}
-        # self._load_game_templates()
         self.add_game_description()
         self.pairs = None
         self.current_round = 0
@@ -51,7 +49,7 @@ class BaseGame(ABC):
             )
             agent.system_prompt_generator.background.append(game_prompt)
 
-    def set_player_instructions(self, *agents: List[GameAgent], history: list = None):
+    def set_players_instructions(self, *agents: List[GameAgent], history: list = None):
         if history is None:
             history = []
         templates_dir = CFG.games_templates_dir / self.game_name
@@ -65,13 +63,20 @@ class BaseGame(ABC):
                 agent.messages = []
             agent.memory.history = []
 
+    def set_single_player_instructions(self, agent: GameAgent, template_name: str, **kwargs):
+        templates_dir = CFG.games_templates_dir / self.game_name
+        instruction_prompt = read_prompt_template(templates_dir, template_name).render(**kwargs)
+        agent.system_prompt_generator.steps = [instruction_prompt]
+        if hasattr(agent, "messages"):
+            agent.messages = []
+        agent.memory.history = []
+
     @staticmethod
     def remove_trailing_number(text):
         return re.sub(r'\d+$', '', text)
 
-    def get_output(self, agent, input_prompt, player_output: str = None, retries=10):
-        if player_output is None:
-            player_output = self.player_output
+    @staticmethod
+    def get_output(agent, input_prompt, player_output: str, retries=10):
         for i in range(retries):
             try:
                 output = agent.run(input_prompt)
