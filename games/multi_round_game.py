@@ -6,10 +6,7 @@ from agents import GameAgent
 
 class MultiRoundGame(BaseGame):
 
-    def __init__(self, agents: Dict[str, GameAgent], game_name: str, rounds: int, player_output: str, players_n: int = 2):
-        super().__init__(agents, game_name, players_n=players_n, rounds=rounds, player_output=player_output,)
-
-    def play_game(self) -> List[dict]:
+    def play_game(self):
         """Play the game for the specified number of rounds, collecting results."""
         for idx, pair in enumerate(self.pairs, start=1):
             pair_history = []
