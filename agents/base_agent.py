@@ -54,7 +54,7 @@ class GameAgent(BaseAgent):
     """
     Wraps an Instructor model hooked to Ollama and exposes .run().
     """
-    def __init__(self, name: str, background_prompt: str, model_name: str = "llama3.2"):
+    def __init__(self, name: str, background_prompt: str, model_name: str = "llama3"):
         self.name = name
         instructor_model = Instructor(
             client=http_client,
