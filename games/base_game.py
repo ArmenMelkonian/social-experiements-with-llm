@@ -26,22 +26,6 @@ class BaseGame(ABC):
         self.pairs = None
         self.current_round = 0
 
-    # def _load_game_templates(self):
-    #     templates_dir = CFG.games_templates_dir / self.game_name
-    #     description = read_prompt_template(templates_dir, "game_description").render(
-    #         total_rounds=self.total_rounds
-    #     )
-    #     for agent in self.agents.values():
-    #         agent.system_prompt_generator.background.append(description)
-    #     self._player_instruction_tmpl = read_prompt_template(templates_dir, "player")
-
-    # def set_player_instructions(self, agent1: GameAgent, agent2: GameAgent):
-    #     instruction_text = self._player_instruction_tmpl.render(round=self.current_round,
-    #                                                             total_rounds=self.total_rounds,
-    #                                                             history=self._format_history())
-    #     agent1.system_prompt_generator.steps = [instruction_text]
-    #     agent2.system_prompt_generator.steps = [instruction_text]
-
     def simulate(self, pairs: int = None):
         logger.info(f"Starting the simulation, game: {self.game_name.replace('_', ' ')}")
         self.generate_agent_pairs(pairs)
@@ -82,11 +66,13 @@ class BaseGame(ABC):
     def remove_trailing_number(text):
         return re.sub(r'\d+$', '', text)
 
-    def get_output(self, agent, input_prompt, retries=4):
+    def get_output(self, agent, input_prompt, player_output: str = None, retries=10):
+        if player_output is None:
+            player_output = self.player_output
         for i in range(retries):
             try:
                 output = agent.run(input_prompt)
-                if output:
+                if isinstance(output, dict) and player_output in output:
                     return output
             except Exception as e:
                 logger.error(f"Failed to get a move for agent: {agent.name}, got {e}, trying {i+1}/{retries}")
