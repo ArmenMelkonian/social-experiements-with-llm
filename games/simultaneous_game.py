@@ -1,20 +1,17 @@
 from collections import defaultdict
 
+import httpx
+from loguru import logger
+
 from games import BaseGame
 
 
 class SimultaneousGame(BaseGame):
 
-    def play_round(self):
+    def play_round(self, *agent_names, idx: int = None, history: list = None) -> dict:
         self.current_round += 1
-        round_result = []
-        for idx, pair in enumerate(self.pairs, start=1):
-            pair_result = self.play_round_batch(*pair, idx=idx)
-            round_result.append(pair_result)
-        self.history.append({f"Round {self.current_round}": round_result})
-
-    # TODO: rename this method later
-    def play_round_batch(self, *agent_names, idx) -> dict:
+        if history is None:
+            history = []
         name_counts = defaultdict(int)
         agents = {}
         for name in agent_names:
@@ -22,12 +19,27 @@ class SimultaneousGame(BaseGame):
             key = f"{name}{name_counts[name]}" if name_counts[name] > 1 else name
             agents[key] = self.agents[name]
 
-        self.set_player_instructions(*agents.values())
+        self.set_player_instructions(*agents.values(), history=history)
 
         input_prompt = {"content": "Your turn to move."}
+        outputs = {}
+        for agent_name, agent in agents.items():
+            try:
+                output = self.get_output(agents[agent_name], input_prompt)
+            except Exception as e:
+                logger.error(f"Couldn't play move for agent: {agent_name}, got {e}")
+                output = {}
+            outputs[agent_name] = output
 
-        outputs = {agent_name: agent.run(input_prompt) for agent_name, agent in agents.items()}
-        actions = {agent_name: output.get(self.player_output) for agent_name, output in outputs.items()}
+        actions = {}
+        for agent_name, output in outputs.items():
+
+            action = output.get(self.player_output)
+            if action is None:
+                base_name = self.remove_trailing_number(agent_name)# handle bad output
+                action = output.get(base_name)
+
+            actions[agent_name] = action
 
         batch_result = {
             "agents": [{"name": name, self.player_output: action} for name, action in actions.items()]
