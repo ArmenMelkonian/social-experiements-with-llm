@@ -1,36 +1,41 @@
+from typing import Dict
+
+from agents import GameAgent
 from games.base_game import BaseGame
 
 class SequentialGame(BaseGame):
 
-    # TODO: add new method play_round_batch and rename later
-    def play_round(self) -> dict:
+    def __init__(self, agents: Dict[str, GameAgent], game_name: str, *,
+                 agent1_templ_name: str, agent2_templ_name: str,
+                 agent1_player_output: str, agent2_player_output: str, rounds: int = 1):
+        super().__init__(agents, game_name, players_n=2, rounds=rounds)
+        self.agent1_templ_name = agent1_templ_name
+        self.agent2_templ_name = agent2_templ_name
+        self.agent1_player_output = agent1_player_output
+        self.agent2_player_output = agent2_player_output
+
+
+    def play_round(self, agent1_name, agent2_name, idx: int = None) -> dict:
         self.current_round += 1
-        agent_names = list(self.agents.keys())
-        first_agent = self.agents[agent_names[0]]
-        second_agent = self.agents[agent_names[1]]
-        # Render prompt for first agent (no prior move info needed)
-        instruction1 = self._player_instruction_tmpl.render(round=self.current_round,
-                                                            total_rounds=self.total_rounds,
-                                                            history=self._format_history(),
-                                                            last_move=None)
-        first_agent.config.system_prompt_generator.steps = [instruction1]
-        # First agent acts
-        result1 = first_agent.run({"content": "Your move."})
-        action1 = result1.action
-        # Now render prompt for second agent, including first agent's move
-        instruction2 = self._player_instruction_tmpl.render(round=self.current_round,
-                                                            total_rounds=self.total_rounds,
-                                                            history=self._format_history(),
-                                                            last_move=action1)
-        second_agent.config.system_prompt_generator.steps = [instruction2]
-        result2 = second_agent.run({"content": f"{first_agent.config.name} chose {action1}. Your move."})
-        action2 = result2.action
+        agent_1 = self.agents[agent1_name]
+        agent_2 = self.agents[agent2_name]
+        self.set_single_player_instructions(agent_1, self.agent1_templ_name)
+        input_prompt_1 = {"content": "Your turn to move."}
+        result1 = self.get_output(agent_1, input_prompt_1, self.agent1_player_output)
+        action1 = result1.get(self.agent1_player_output)
+        kwargs = {self.agent1_player_output: action1}
+        self.set_single_player_instructions(agent_2, self.agent2_templ_name, **kwargs)
+        input_prompt_2 = {"content": f"{agent_1.name} chose {action1}. Your move."}
+        result2 = self.get_output(agent_2, input_prompt_2, self.agent2_player_output)
+        action2 = result2.get(self.agent2_player_output)
         # Record the round outcome
-        round_result = {
-            "round": self.current_round,
-            "first_player": {"name": first_agent.config.name, "action": action1},
-            "second_player": {"name": second_agent.config.name, "action": action2}
+        result = {
+            "agents": [
+                {"name": agent_1.name, self.agent1_player_output: action1},
+                {"name": agent_2.name, self.agent2_player_output: action2}
+            ]
         }
-        self.history.append(round_result)
-        print(f"Round {self.current_round}: {first_agent.config.name} → {action1}, then {second_agent.config.name} → {action2}")
-        return round_result
+        print(f"Round {self.current_round} (Pair {idx} / {len(self.pairs)}): {agent_1.name} → {action1}, "
+              f"then {agent_2.name} → {action2}")
+
+        return result
