@@ -64,9 +64,9 @@ src/
 
    _Example_  
    ```python
-   from games.one_shot_game import OneShotGame
-   from games.sequential_game import SequentialGame
+   from games import OneShotGame, SequentialGame
 
+   
    class MyCustomGame(OneShotGame, SequentialGame):
        # implement game‑specific logic here
        ...
