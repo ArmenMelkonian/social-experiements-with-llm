@@ -9,8 +9,8 @@ class PublicGoodsGame(MultiRoundGame, SimultaneousGame):
 if __name__ == "__main__":
     game = PublicGoodsGame(agents,
                            game_name="public_goods_game",
-                           rounds=3,
-                           players_n=4,
+                           players_n=5,
+                           rounds=4,
                            player_output="g")
-    game.simulate()
+    game.simulate(pairs=100)
     game.save_results()

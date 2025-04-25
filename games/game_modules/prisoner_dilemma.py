@@ -11,5 +11,5 @@ if __name__ == "__main__":
                                 game_name="prisoner_dilemma",
                                 players_n=2,
                                 player_output="action")
-    game.simulate()
+    game.simulate(pairs=100)
     game.save_results()
