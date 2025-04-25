@@ -61,6 +61,9 @@ class BaseGame(ABC):
                 player_name=agent.name, round=self.current_round,
                 total_rounds=self.total_rounds, history=history)
             agent.system_prompt_generator.steps = [instruction_prompt]
+            if hasattr(agent, "messages"):
+                agent.messages = []
+            agent.memory.history = []
 
     @staticmethod
     def remove_trailing_number(text):
