@@ -28,9 +28,10 @@ class BaseAnalyzer(ABC):
         self.raw: Dict[str, Any] = self._load()
         self.df: pd.DataFrame = self._tidy()   # game-specific melt
 
-    def run_all(self) -> None:
+    def run_all(self, skip_basic=False) -> None:
         print(f"\n=== {self.game_name} ({len(self.df)} observations) ===")
-        self.basic_stats()
+        if not skip_basic:
+            self.basic_stats()
         self.special_stats()
         self.make_plots()
 
