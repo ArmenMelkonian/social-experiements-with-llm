@@ -45,6 +45,7 @@ A full JSON trace is saved to `games/results/prisoner_dilemma_simulation.json`.
 ## Repository layout
 ```
 agents/              # agent base classes & persona definitions
+analysis/            # analysis scripts and figures
 data/                
   ├── characters/    # prompt templates for each persona
   └── games/         # prompt templates for each game
