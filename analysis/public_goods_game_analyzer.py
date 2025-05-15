@@ -57,9 +57,9 @@ class PGSummary(BaseAnalyzer):
     def make_plots(self):
         by_round = self.df.groupby("round")["g"].mean()
         by_round.plot(marker="o")
-        plt.ylabel("Average contribution"); plt.xlabel("Round")
-        plt.title("Public Goods – contribution decay")
-        plt.savefig(CFG.figures_dir / "pg_time_series.png"); plt.close()
+        plt.ylabel("Միջին ներդրում"); plt.xlabel("Խաղափուլ")
+        plt.title("Հանրային բարիքներ – ներդրումների կոր")
+        plt.savefig(CFG.figures_dir / "pg_time_series_armenian.png"); plt.close()
 
 
 if __name__ == "__main__":

@@ -34,23 +34,24 @@ class UltimatumSummary(BaseAnalyzer):
 
     def make_plots(self):
         plt.figure(figsize=(7, 4))
+        self.df = self.df.rename({"accepted": "Ընտրություն"}, axis=1)
 
         sns.histplot(
             data=self.df,
             x="offer",
-            hue=self.df["accepted"].map({1: "Accepted", 0: "Rejected"}),
+            hue=self.df["Ընտրություն"].map({1: "Ընդունված", 0: "Մերժված"}),
             multiple="stack",
             bins=10,
-            palette={"Accepted": "steelblue", "Rejected": "indianred"},
+            palette={"Ընդունված": "steelblue", "Մերժված": "indianred"},
             edgecolor="white",
         )
 
-        plt.xlabel("Offer (units)")
-        plt.ylabel("Count")
-        plt.title("Ultimatum-Game offers: accepted vs rejected")
+        plt.xlabel("Առաջարկ (միավորներ)")
+        plt.ylabel("Քանակ")
+        plt.title("Ուլտիմատումի խաղի առաջարկներ: ընդունված vs մերժված")
         plt.tight_layout()
 
-        plt.savefig(CFG.figures_dir / "ultimatum_offers.png", dpi=300)
+        plt.savefig(CFG.figures_dir / "ultimatum_offers_armenian.png", dpi=300)
         plt.close()
 
 

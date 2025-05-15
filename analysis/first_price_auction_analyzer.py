@@ -33,20 +33,20 @@ class AuctionSummary(BaseAnalyzer):
         by_round = self.df.groupby("round")
 
         ax = by_round["winning_bid"].mean().plot(
-            marker="o", label="Mean winning bid"
+            marker="o", label="Հաղթող միջին գնի առաջարկ"
         )
 
         # add overall mean-bid curve
         by_round["mean_bid"].mean().plot(
-            marker="s", linestyle="--", label="Mean bid", ax=ax
+            marker="s", linestyle="--", label="Միջին գնի առաջարկ", ax=ax
         )
 
-        plt.ylabel("Bid (currency units)")
-        plt.xlabel("Round")
-        plt.title("First-Price Auction – bid dynamics")
+        plt.ylabel("Գնի առաջարկ (միավորներ)")
+        plt.xlabel("Փուլ")
+        plt.title("Առաջին գնի փակ աճուրդ – գնի առաջարկի դինամիկա")
         plt.legend()
         plt.tight_layout()
-        plt.savefig(CFG.figures_dir / "auction_winners.png")
+        plt.savefig(CFG.figures_dir / "auction_winners_armenian.png")
         plt.close()
 
 

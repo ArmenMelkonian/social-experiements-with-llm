@@ -32,10 +32,13 @@ class PDSummary(BaseAnalyzer):
 
     def make_plots(self):
         sns.heatmap(self._cross, annot=True, fmt="d", cmap="Blues", cbar=False)
-        plt.title("Prisoner’s Dilemma outcome matrix")
-        plt.xlabel("Player 2")
-        plt.ylabel("Player 1")
-        plt.savefig(CFG.figures_dir / "pd_matrix.png")
+        # plt.title("Prisoner’s Dilemma outcome matrix")
+        # plt.xlabel("Player 2")
+        # plt.ylabel("Player 1")
+        plt.title("Բանտարկյալների դիլեմայի մատրիցա")
+        plt.xlabel("Խաղացող 2")
+        plt.ylabel("Խաղացող 1")
+        plt.savefig(CFG.figures_dir / "pd_matrix_armenian.png")
         plt.close()
 
 

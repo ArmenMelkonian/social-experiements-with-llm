@@ -27,10 +27,10 @@ class TrustSummary(BaseAnalyzer):
 
     def make_plots(self):
         self.df.plot.scatter("Y", "Z")
-        plt.xlabel("Investment Y")
-        plt.ylabel("Return Z")
-        plt.title("Trust Game – Returns vs. Investments")
-        plt.savefig(CFG.figures_dir / "trust_scatter.png")
+        plt.xlabel("Ներդրում Y")
+        plt.ylabel("Վերադարձ Z")
+        plt.title("Վստահության խաղ – Վերադարձ vs Ներդրում")
+        plt.savefig(CFG.figures_dir / "trust_scatter_armenian.png")
         plt.close()
 
 
